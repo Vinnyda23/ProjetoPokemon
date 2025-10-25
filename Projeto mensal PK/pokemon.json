@@ -1,0 +1,14 @@
+[
+  { "id": 1, "name": "Bulbasaur", "type": "Grama", "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1.png" },
+  { "id": 7, "name": "Squirtle", "type": "Agua", "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/7.png" },
+  { "id": 4, "name": "Charmander", "type": "Fogo", "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/4.png" },
+  { "id": 52, "name": "Meowth", "type": "Normal", "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/52.png" },
+  { "id": 10, "name": "Caterpie", "type": "Inseto", "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10.png" },
+  { "id": 149, "name": "Dragonite", "type": "Dragão", "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/149.png" },
+  { "id": 16, "name": "Pidgey", "type": "Voador", "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/16.png" },
+  { "id": 143, "name": "Snorlax", "type": "Normal", "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/143.png" },
+  { "id": 25, "name": "Pikachu", "type": "Electrico", "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/25.png" },
+  { "id": 21, "name": "Spearow", "type": "Normal", "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/21.png" },
+  { "id": 19, "name": "Rattata", "type": "Normal", "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/19.png" },
+  { "id": 39, "name": "Jigglypuff", "type": "Fada", "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/39.png" }
+]

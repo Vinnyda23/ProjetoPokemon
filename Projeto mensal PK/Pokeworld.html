@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>PokeWorld</title>
+
+    <link rel="icon" href="Poke World.png" />
+
+    <link rel="stylesheet" href="style.css" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+  </head>
+
+  <body>
+    <header class="header">
+      <div class="logo-left">
+        <i class="fas fa-circle-notch"></i>
+      </div>
+
+      <img src="Poke World.png" alt="Pokémon Logo" class="logo-center" />
+      <div class="logo-right"></div>
+    </header>
+
+    <main class="container">
+      <div class="search-bar">
+        <div class="search-box">
+          <i class="fas fa-search"></i>
+          <input
+            id="searchInput"
+            type="text"
+            placeholder="Pesquisar Pokémon por nome..."
+          />
+        </div>
+
+        <button id="show-all-btn" class="filter-option-btn active-filter">
+          <i class="fas fa-list"></i> Todos
+        </button>
+
+        <button id="show-favorites-btn" class="filter-option-btn">
+          <i class="fas fa-star"></i> Favoritos
+        </button>
+
+        <button class="filter-btn"><i class="fas fa-filter"></i> Filtro</button>
+      </div>
+
+      <div id="pokemon-container"></div>
+
+      <div class="buttonLogin">
+        <div class="iconUser">
+          <h4>
+            <a href="Login.html" class="user"><i class="fas fa-user"></i></a>
+          </h4>
+        </div>
+      </div>
+
+      <!--Modal-->
+      <dialog
+        id="modal-1"
+        style="
+          background-color: rgba(255, 255, 255, 0.534);
+          backdrop-filter: blur(8px);
+          -webkit-backdrop-filter: blur(8px);
+          border: none;
+          outline: none;
+          border-radius: 15px;
+        "
+      >
+               
+        <h1 class="modal-title">Status PokeCard</h1>
+                               
+        <img
+          id="pokemon-image"
+          src=""
+          alt="Imagem do Pokémon"
+          class="modal-pokemon-image"
+        />
+                               
+        <h2
+          id="pokemon-name-modal"
+          style="text-align: center; margin-top: 15px; color: #000000"
+        ></h2>
+             
+      </dialog>
+           
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
