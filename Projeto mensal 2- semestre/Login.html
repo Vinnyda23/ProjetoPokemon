@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0" />
+    <link rel="stylesheet" href="LoginRegistrar.css" />
+
+    <title>Login</title>
+
+    <link rel="icon" href="Poke World.png" />
+  </head>
+  <body>
+    <!-- HEADER -->
+    <header class="header">
+      <div class="logo-left">
+        <i class="fas fa-circle-notch"></i>
+      </div>
+      <img src="Poke World.png" alt="Pokémon Logo" class="logo-center" />
+      <div class="logo-right"></div>
+    </header>
+
+    <!--Container da tela de login -->
+    <div class="container">
+      <h2>Login</h2>
+      <form id="loginForm">
+        <label for="username">Usuário:</label>
+        <input type="text" id="username" required />
+
+        <label for="password">Senha:</label>
+        <input type="password" id="password" required />
+
+        <button type="submit">Entrar</button>
+      </form>
+      <p id="mensagem"></p>
+      <div class="register">
+        <h3><a href="Registrar.html">Registrar</a></h3>
+      </div>
+    </div>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const loginForm = document.getElementById("loginForm");
+        const usernameInput = document.getElementById("username");
+        const passwordInput = document.getElementById("password");
+        const mensagemDiv = document.getElementById("mensagem");
+
+        const PAGINA_DE_SUCESSO = "Pokeworld.html";
+
+        // Garante que o formulário existe antes de tentar anexar o evento
+        if (!loginForm) {
+          console.error(
+            "Login: Formulário de login (loginForm) não encontrado."
+          );
+          return;
+        }
+
+        loginForm.addEventListener("submit", (event) => {
+          event.preventDefault();
+
+          const username = usernameInput.value.trim();
+          const password = passwordInput.value.trim();
+
+          mensagemDiv.textContent = "";
+          mensagemDiv.className = "";
+
+          // 1. Carregar Contas Registradas do localStorage
+          const savedUsers =
+            JSON.parse(localStorage.getItem("registeredUsers")) || {};
+
+          // 2. Verificação de Login
+          if (savedUsers[username] && savedUsers[username] === password) {
+            // Sucesso no Login
+            mensagemDiv.textContent =
+              "Login bem-sucedido! Bem-vindo ao Poke World!";
+            mensagemDiv.classList.add("sucesso");
+
+            // Redirecionamento
+            setTimeout(() => {
+              window.location.href = PAGINA_DE_SUCESSO;
+            }, 1500);
+          } else {
+            // Falha no Login
+            mensagemDiv.textContent = "Usuário ou senha incorretos.";
+            mensagemDiv.classList.add("erro");
+          }
+        });
+      });
+    </script>
+  </body>
+</html>

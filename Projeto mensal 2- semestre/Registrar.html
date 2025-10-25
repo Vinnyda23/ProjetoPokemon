@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="LoginRegistrar.css" />
+
+    <title>Registro</title>
+
+    <link rel="icon" href="Poke World.png" />
+  </head>
+  <body>
+    <header class="header">
+      <div class="logo-left">
+        <i class="fas fa-circle-notch"></i>
+      </div>
+      <img src="Poke World.png" alt="Pokémon Logo" class="logo-center" />
+      <div class="logo-right"></div>
+    </header>
+
+    <div class="container">
+      <h2>Criar Conta</h2>
+      <form id="registerForm">
+        <label for="reg-username">Usuário:</label>
+        <input type="text" id="reg-username" required />
+
+        <label for="reg-password">Senha:</label>
+        <input type="password" id="reg-password" required />
+
+        <label for="reg-confirm-password">Confirmar Senha:</label>
+        <input type="password" id="reg-confirm-password" required />
+
+        <button type="submit">Registrar</button>
+      </form>
+      <p id="mensagem"></p>
+      <div class="register">
+        <h3><a href="Login.html">Voltar para Login</a></h3>
+      </div>
+    </div>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const registerForm = document.getElementById("registerForm");
+        const usernameInput = document.getElementById("reg-username");
+        const passwordInput = document.getElementById("reg-password");
+        const confirmPasswordInput = document.getElementById(
+          "reg-confirm-password"
+        );
+        const mensagemDiv = document.getElementById("mensagem");
+
+        // Garante que o formulário existe antes de tentar anexar o evento
+        if (!registerForm) {
+          console.error(
+            "Registro: Formulário de registro (registerForm) não encontrado."
+          );
+          return;
+        }
+
+        registerForm.addEventListener("submit", (event) => {
+          event.preventDefault();
+
+          const username = usernameInput.value.trim();
+          const password = passwordInput.value.trim();
+          const confirmPassword = confirmPasswordInput.value.trim();
+
+          // Limpa a mensagem anterior
+          mensagemDiv.textContent = "";
+          mensagemDiv.className = "";
+
+          // 1. Verificação de Senhas
+          if (password !== confirmPassword) {
+            mensagemDiv.textContent = "As senhas não coincidem!";
+            mensagemDiv.classList.add("erro");
+            return;
+          }
+
+          // 2. Simulação de Verificação de Usuário Existente
+          const savedUsers =
+            JSON.parse(localStorage.getItem("registeredUsers")) || {};
+
+          if (savedUsers[username]) {
+            mensagemDiv.textContent = "Este nome de usuário já está em uso.";
+            mensagemDiv.classList.add("erro");
+            return;
+          }
+
+          // 3. Simulação de Registro (Salvar no localStorage)
+          savedUsers[username] = password;
+          localStorage.setItem("registeredUsers", JSON.stringify(savedUsers));
+
+          // Sucesso no Registro
+          mensagemDiv.textContent =
+            "Registro concluído com sucesso! Redirecionando para o Login...";
+          mensagemDiv.classList.add("sucesso");
+
+          // Redireciona para a página de Login
+          setTimeout(() => {
+            window.location.href = "Login.html";
+          }, 2000);
+        });
+      });
+    </script>
+  </body>
+</html>

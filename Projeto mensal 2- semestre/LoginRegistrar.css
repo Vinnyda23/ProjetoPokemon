@@ -1,0 +1,150 @@
+/* Reset Básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    /* 1. CONFIGURAÇÃO DE FUNDO (Ajuste o caminho da imagem!) */
+    background-image: url('Background1.png');
+    /* ATENÇÃO: Substitua 'CAMINHO_PARA_SUA_IMAGEM_DE_FUNDO.jpg' pelo nome ou caminho real da sua imagem! */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    color: #333;
+    position: relative;
+    /* Necessário para posicionamento absoluto do container */
+}
+
+/* --- HEADER Styles (Ajustado para ser mais discreto ou transparente) --- */
+.header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #008498ad;
+    /* Semi-transparente ou mude para a cor que desejar */
+    border-bottom: 0px;
+    /* Removendo a linha de baixo para ser mais limpo */
+    box-shadow: none;
+    position: absolute;
+    /* Para não interferir na centralização vertical do container */
+    top: 0;
+    z-index: 1000;
+}
+
+.logo-center {
+    height: 60px;
+    /* Ajuste o tamanho do seu logo se necessário */
+    margin: 0 auto;
+    /* Centraliza a logo no header */
+}
+
+/* --- CONTAINER do Formulário (Caixa Branca e Centralização) --- */
+.container {
+    background: #ffffff;
+    /* Fundo branco SÓLIDO */
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    width: 90%;
+    max-width: 400px;
+    text-align: center;
+
+    /* Centralização Perfeita */
+    position: absolute;
+    top: 55%;
+    /* Um pouco mais baixo do centro vertical para dar espaço ao logo no topo */
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.container h2 {
+    margin-bottom: 25px;
+    color: #555;
+    /* Azul Pokémon */
+    font-size: 28px;
+}
+
+/* --- FORM Styles --- */
+#loginForm {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+
+label {
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #555;
+}
+
+input {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+/* --- BOTÃO VERDE --- */
+button {
+    padding: 12px;
+    background-color: #4CAF50;
+    /* Verde vibrante */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-top: 10px;
+}
+
+button:hover {
+    background-color: #45a049;
+    /* Um verde ligeiramente mais escuro ao passar o mouse */
+}
+
+/* --- MENSAGEM e REGISTER (Mantidos para fins de funcionalidade) --- */
+#mensagem {
+    margin-top: 15px;
+    padding: 10px;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.sucesso {
+    background-color: #e6ffe6;
+    color: #1b5e20;
+}
+
+.erro {
+    background-color: #ffe6e6;
+    color: #a00000;
+}
+
+.register {
+    margin-top: 15px;
+    font-size: 14px;
+}
+
+.register a {
+    color: #3b4cca;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.register a:hover {
+    text-decoration: underline;
+}
